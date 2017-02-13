@@ -112,8 +112,6 @@ public class Rover2 extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Direção Não Existe, Tente Novamente", Toast.LENGTH_SHORT).show();
         } else if (c == 1) {
             Toast.makeText(getApplicationContext(), "Comando Inválido ou Rover fora dos limites, Tente Novamente", Toast.LENGTH_SHORT).show();
-        } else if (posx + 1 > gridx || posy + 1 > gridy) {
-            Toast.makeText(getApplicationContext(), "Rover fora dos limites, Tente Novamente!", Toast.LENGTH_SHORT).show();
         } else {
             return "next";
         }
