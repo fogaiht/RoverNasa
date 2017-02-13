@@ -4,7 +4,7 @@
     <string name="rv2">Rover 2</string>
     <string name="pos_ini">Posição Inicial</string>
     <string name="pos_fim">Status Atual</string>
-    <string name="fim_rv1">aaaaaaaa</string>
+    <string name="pos_max">Posição Máxima</string>
     <string name="fim_rv2">bbbbbbbb</string>
     <string name="pos_x">X</string>
     <string name="pos_y">Y</string>
