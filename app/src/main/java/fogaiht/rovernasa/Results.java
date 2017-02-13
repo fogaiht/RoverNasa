@@ -7,12 +7,6 @@ import android.widget.TextView;
 
 public class Results extends AppCompatActivity {
 
-//    @Override
-//        public void onBackPressed()
-//        {
-//            startActivity(new Intent(getBaseContext(), activity.class));
-//        }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,11 +19,11 @@ public class Results extends AppCompatActivity {
         String pos_finalRv1 = bundle.getString("txtF1");
         String pos_finalRv2 = bundle.getString("txtF2");
 
-        TextView teste = (TextView) findViewById(R.id.txtR1);
-        teste.setText(pos_finalRv1);
+        TextView posRv1 = (TextView) findViewById(R.id.txtR1);
+        posRv1.setText(pos_finalRv1);
 
-        TextView teste2 = (TextView) findViewById(R.id.txtR2);
-        teste2.setText(pos_finalRv2);
+        TextView posRv2 = (TextView) findViewById(R.id.txtR2);
+        posRv2.setText(pos_finalRv2);
 
     }
 }
