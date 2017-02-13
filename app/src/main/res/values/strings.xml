@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Rover Nasa</string>
+    <string name="rv1">Rover 1</string>
+    <string name="rv2">Rover 2</string>
+    <string name="pos_ini">Posição Inicial</string>
+    <string name="pos_fim">Status Atual</string>
+    <string name="fim_rv1">aaaaaaaa</string>
+    <string name="fim_rv2">bbbbbbbb</string>
+    <string name="pos_x">X</string>
+    <string name="pos_y">Y</string>
+    <string name="ins">Inserir</string>
+    <string name="direc">D</string>
+    <string name="action">Comandos</string>
+    <string name="next">Próximo</string>
+    <string name="back">Voltar</string>
+    <string name="grid">Coordenada Superior-Direita</string>
+</resources>
