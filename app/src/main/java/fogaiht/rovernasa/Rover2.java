@@ -30,10 +30,11 @@ public class Rover2 extends AppCompatActivity {
         final EditText C = (EditText) findViewById(R.id.editText2);
 
 
-
         Button iniciar = (Button) findViewById(R.id.btn2);
         iniciar.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+
+                Rover b = new Rover();
 
                 int pos_x = Integer.parseInt(X.getText().toString());
                 int pos_y = Integer.parseInt(Y.getText().toString());
@@ -41,22 +42,19 @@ public class Rover2 extends AppCompatActivity {
                 int griid_y = Integer.parseInt(grid_y);
                 int command;
 
-                Rover b = new Rover();
-
                 String direction = D.getText().toString();
                 String comm = C.getText().toString();
 
                 b.inputGrid(griid_x, griid_y);
-
                 b.insert_status(pos_x, pos_y, direction);
                 command = b.action_move(comm);
 
-                TextView info = (TextView) findViewById(R.id.info2);
-                info.setText(b.print_status());
+                TextView info2 = (TextView) findViewById(R.id.info2);
+                info2.setText(b.print_status());
 
                 String txt1 = grid_x;
                 String txt2 = grid_y;
-                String txtF2 = info.getText().toString();
+                String txtF2 = info2.getText().toString();
 
                 Bundle bundle1 = new Bundle();
                 Bundle bundle2 = new Bundle();

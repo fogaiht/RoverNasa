@@ -19,16 +19,8 @@ public class Rover1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.rover1);
 
-//        Button iniciar = (Button) findViewById(R.id.button3);
-//        iniciar.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View v) {
-//                startActivity(new Intent(getBaseContext(), Rover2.class));
-//            }
-//        });
-
         final Intent intent1 = new Intent(Rover1.this, Rover2.class);
-
-        Intent intent = getIntent();
+        final Intent intent = getIntent();
 
         final Bundle bundle = intent.getExtras();
 
@@ -50,7 +42,6 @@ public class Rover1 extends AppCompatActivity {
                 int pos_y = Integer.parseInt(Y.getText().toString());
                 int griid_x = Integer.parseInt(grid_x);
                 int griid_y = Integer.parseInt(grid_y);
-
                 int command;
 
                 String direction = D.getText().toString();
@@ -60,16 +51,12 @@ public class Rover1 extends AppCompatActivity {
                 a.insert_status(pos_x, pos_y, direction);
                 command = a.action_move(comm);
 
-                TextView teste = (TextView) findViewById(R.id.testetxt);
-                teste.setText(a.print_status());
+                TextView info1 = (TextView) findViewById(R.id.info1);
+                info1.setText(a.print_status());
 
-                String txt1 = "";
-                String txt2 = "";
-                String txtF1 = "";
-
-                txt1 = grid_x;
-                txt2 = grid_y;
-                txtF1 = teste.getText().toString();
+                String txt1 = grid_x;
+                String txt2 = grid_y;
+                String txtF1 = info1.getText().toString();
 
                 Bundle bundle1 = new Bundle();
                 Bundle bundle2 = new Bundle();
@@ -99,7 +86,7 @@ public class Rover1 extends AppCompatActivity {
         } else if (!"N".equalsIgnoreCase(d) && !"S".equalsIgnoreCase(d)
                 && !"E".equalsIgnoreCase(d) && !"W".equalsIgnoreCase(d)) {
             Toast.makeText(getApplicationContext(), "Direção Não Existe, Tente Novamente", Toast.LENGTH_SHORT).show();
-        } else if (c == 1){
+        } else if (c == 1) {
             Toast.makeText(getApplicationContext(), "Comando Inválido ou Rover fora dos limites, Tente Novamente", Toast.LENGTH_SHORT).show();
         } else {
             return "next";

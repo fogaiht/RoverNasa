@@ -1,7 +1,5 @@
 package fogaiht.rovernasa;
 
-import android.widget.Toast;
-
 import java.util.Scanner;
 
 /**
