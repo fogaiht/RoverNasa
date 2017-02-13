@@ -92,7 +92,7 @@ public class Rover1 extends AppCompatActivity {
                 String aux;
                 aux = exceptions(pos_x, pos_y, direction, griid_x, griid_y, command);
 
-                if (aux.equals("intent2")) {
+                if (aux.equals("next")) {
                     startActivity(intent1);
                 }
             }
@@ -102,14 +102,13 @@ public class Rover1 extends AppCompatActivity {
     private String exceptions(int posx, int posy, String d, int gridx, int gridy, int c) {
         if (posx > gridx || posy > gridy) {
             Toast.makeText(getApplicationContext(), "Fora dos Limites, Tente Novamente!", Toast.LENGTH_SHORT).show();
-
         } else if (!"N".equalsIgnoreCase(d) && !"S".equalsIgnoreCase(d)
                 && !"E".equalsIgnoreCase(d) && !"W".equalsIgnoreCase(d)) {
             Toast.makeText(getApplicationContext(), "Direção Não Existe, Tente Novamente", Toast.LENGTH_SHORT).show();
         } else if (c == 1){
-            Toast.makeText(getApplicationContext(), "Comando Inválido, Tente Novamente", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Comando Inválido ou Rover fora dos limites, Tente Novamente", Toast.LENGTH_SHORT).show();
         } else {
-            return "intent2";
+            return "next";
         }
         return "intentX";
     }

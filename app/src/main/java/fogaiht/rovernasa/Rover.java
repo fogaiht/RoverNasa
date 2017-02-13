@@ -113,18 +113,36 @@ public class Rover {
                 x = 0;
             } else if ((str.charAt(i) == 'M') || (str.charAt(i) == 'm')) {
                 if ("N".equalsIgnoreCase(direction)) {
-                    pos_y = pos_y + 1;
+                    if (pos_y + 1 > grid_y) {
+                        x = 1;
+                    } else {
+                        pos_y = pos_y + 1;
+                        x = 0;
+                    }
                 } else if ("S".equalsIgnoreCase(direction)) {
-                    pos_y = pos_y - 1;
+                    if (pos_y - 1 < grid_y) {
+                        x = 1;
+                    } else {
+                        pos_y = pos_y - 1;
+                        x = 0;
+                    }
                 } else if ("E".equalsIgnoreCase(direction)) {
-                    pos_x = pos_x + 1;
+                    if (pos_x + 1 > grid_x) {
+                        x = 1;
+                    } else {
+                        pos_x = pos_x + 1;
+                        x = 0;
+                    }
                 } else if ("W".equalsIgnoreCase(direction)) {
-                    pos_x = pos_x - 1;
+                    if (pos_x - 1 < grid_x) {
+                        x = 1;
+                    } else {
+                        pos_x = pos_x - 1;
+                        x = 0;
+                    }
                 }
-                x = 0;
-            } else {
+            } else
                 x = 1;
-            }
         }
         return x;
     }
