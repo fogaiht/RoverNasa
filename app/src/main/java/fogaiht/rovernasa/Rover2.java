@@ -11,52 +11,37 @@ import android.widget.Toast;
 
 public class Rover2 extends AppCompatActivity {
 
-//    @Override
-//        public void onBackPressed()
-//        {
-//            startActivity(new Intent(getBaseContext(), activity.class));
-//        }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.rover2);
 
-//        Button iniciar = (Button) findViewById(R.id.button3);
-//        iniciar.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View v) {
-//                startActivity(new Intent(getBaseContext(), Rover2.class));
-//            }
-//        });
-
         final Intent intent1 = new Intent(Rover2.this, Results.class);
-
         final Intent intent = getIntent();
-
         final Bundle bundle = intent.getExtras();
 
         final String grid_x = bundle.getString("txt1");
         final String grid_y = bundle.getString("txt2");
         final String txtF1 = bundle.getString("txtF1");
 
+        final EditText X = (EditText) findViewById(R.id.editTextX);
+        final EditText Y = (EditText) findViewById(R.id.editTextY);
+        final EditText D = (EditText) findViewById(R.id.editTextD);
+        final EditText C = (EditText) findViewById(R.id.editText2);
+
+
 
         Button iniciar = (Button) findViewById(R.id.btn2);
         iniciar.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                EditText X = (EditText) findViewById(R.id.editTextX);
-                EditText Y = (EditText) findViewById(R.id.editTextY);
-                EditText D = (EditText) findViewById(R.id.editTextD);
-                EditText C = (EditText) findViewById(R.id.editText2);
-
-                Rover b = new Rover();
-
                 int pos_x = Integer.parseInt(X.getText().toString());
                 int pos_y = Integer.parseInt(Y.getText().toString());
                 int griid_x = Integer.parseInt(grid_x);
                 int griid_y = Integer.parseInt(grid_y);
-
                 int command;
+
+                Rover b = new Rover();
 
                 String direction = D.getText().toString();
                 String comm = C.getText().toString();
@@ -66,18 +51,12 @@ public class Rover2 extends AppCompatActivity {
                 b.insert_status(pos_x, pos_y, direction);
                 command = b.action_move(comm);
 
+                TextView info = (TextView) findViewById(R.id.info2);
+                info.setText(b.print_status());
 
-                TextView teste = (TextView) findViewById(R.id.testetxt2);
-                teste.setText(b.print_status());
-//                teste.setText(b.print_grid());
-
-                String txt1 = "";
-                String txt2 = "";
-                String txtF2 = "";
-
-                txt1 = grid_x;
-                txt2 = grid_y;
-                txtF2 = teste.getText().toString();
+                String txt1 = grid_x;
+                String txt2 = grid_y;
+                String txtF2 = info.getText().toString();
 
                 Bundle bundle1 = new Bundle();
                 Bundle bundle2 = new Bundle();
@@ -106,7 +85,7 @@ public class Rover2 extends AppCompatActivity {
 
     private String exceptions(int posx, int posy, String d, int gridx, int gridy, int c) {
         if (posx > gridx || posy > gridy) {
-            Toast.makeText(getApplicationContext(), "Fora dos Limites, Tente Novamente!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Fora dos Limites, Tente Novamente", Toast.LENGTH_SHORT).show();
         } else if (!"N".equalsIgnoreCase(d) && !"S".equalsIgnoreCase(d)
                 && !"E".equalsIgnoreCase(d) && !"W".equalsIgnoreCase(d)) {
             Toast.makeText(getApplicationContext(), "Direção Não Existe, Tente Novamente", Toast.LENGTH_SHORT).show();

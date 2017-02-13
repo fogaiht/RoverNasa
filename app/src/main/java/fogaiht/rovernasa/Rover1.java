@@ -14,12 +14,6 @@ import java.util.Objects;
 
 public class Rover1 extends AppCompatActivity {
 
-//    @Override
-//        public void onBackPressed()
-//        {
-//            startActivity(new Intent(getBaseContext(), activity.class));
-//        }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
