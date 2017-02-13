@@ -110,7 +110,6 @@ public class Rover {
                 }
                 x = 0;
             } else if ((str.charAt(i) == 'M') || (str.charAt(i) == 'm')) {
-                int m = 1;
                 if ("N".equalsIgnoreCase(direction)) {
                     if (pos_y +1 > grid_y){
                         x = 1;
